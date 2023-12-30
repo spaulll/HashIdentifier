@@ -1,18 +1,20 @@
 import hashid
 from pyscript import document
-
+from pyscript import display
 
 def identify_hash(hash_value):
-    # Create a hash identifier object
-    identifier = hashid.HashID()
-   
-    # Identify the hash types
-    results = list(identifier.identifyHash(hash_value))
-    return results
+    try:
+        # Create a hash identifier object
+        identifier = hashid.HashID()
+
+        # Identify the hash types
+        results = list(identifier.identifyHash(hash_value))
+    except Exception as e:
+        return None
+
     # Print the results in a human-readable format
     if results:
         possible_types = ''
-        
         for result in results:
             possible_types += f"[+] {result.name}"
             possible_types += "\n"
@@ -21,17 +23,16 @@ def identify_hash(hash_value):
         return None
 
 def findH(event):
-    input_hash = document.querySelector("#enteredHash")
-    types = identify_hash(str(input_hash))
+    input_hash = document.querySelector("#input")
+    types = identify_hash(str(input_hash.value))
+    
+    output_div = document.querySelector("#output")
+    
     if types is None:
-        op = f"""
-            No hash types identified 😕.
-            """
-        output_div = document.querySelector("#output")
-        output_div.innerText = op
+        op = "No hash types found! 😕."
     else:
-        op = f"""
-            {types}
-            """
-        output_div = document.querySelector("#output")
-        output_div.innerText = op
+        op = "Possible hash types are:\n"
+        op += types
+       
+    
+    output_div.innerText = op
