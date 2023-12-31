@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hash Identifier 🔍</title>
-    <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
-    <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
-    <!-- Shoelace -->
-    <link rel="stylesheet" media="(prefers-color-scheme:light)" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.3.0/dist/themes/light.css" />
-    <link rel="stylesheet" media="(prefers-color-scheme:dark)" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.3.0/dist/themes/dark.css" onload="document.documentElement.classList.add('sl-theme-dark');" />
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.3.0/dist/shoelace.js"></script>
 
-    <link rel="stylesheet" href="style.css">
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hash Identifier 🔍</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
+  <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <body>
-    <div class="all">
-      <h1>Identify The Hash 🔍</h1>
-      <p>Identify the Type of hash with ease!</p>
-      <input type="text" name="text" class="input" id="input" placeholder="Enter any hash">
-      <div class="highlight"></div>
-      <div class="button">
-        <button py-click="findH"><span>Find Hash Type</span></button>
-      </div>
-      <div id="output" class="output"></div>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.htm"><img src="assets/icon.svg" height="64" alt="Icon"></a>
+      <a href="index.htm">
+        <h1>HashLens</h1>
+      </a>
     </div>
-    <script type="py" src="./main.py" config="./pyscript.json"></script>
-  </body>
+    <div class="right">
+      <a href="https://github.com/spaulll/HashIdentifier">
+        <img src="assets/github.svg"></a>
+      <a href="https://github.com/spaulll/HashIdentifier">
+        <h4>GitHub</h4>
+      </a>
+
+    </div>
+  </header>
+
+  <div class="all">
+    <h1>Identify The Hash 🔍</h1>
+    <p>Identify the Type of hash with ease!</p>
+    <input type="text" name="text" class="input" id="input" placeholder="Enter any hash">
+    <div class="highlight"></div>
+    <div class="button">
+      <button py-click="findH"><span>Find Hash Type</span></button>
+    </div>
+    <div id="output" class="output"></div>
+  </div>
+  <script type="py" src="./main.py" config="./pyscript.json"></script>
+</body>
 
 </html>

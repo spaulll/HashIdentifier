@@ -3,16 +3,61 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #ecf0f1;
-  margin: 0;
+  margin: 10;
   padding: 0;
 }
 
 .all {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 100px;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 20px; /* Adding rounded corners */
+  box-shadow: 0 0 10px rgba(105, 138, 187, 0.781);
+}
+header:hover {
+  box-shadow: 0 0 20px rgba(105, 138, 187, 0.781);
+}
+.logo {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none; /* Remove default underline from the link */
+  color: #333; /* Choose a suitable color */
+}
+
+.logo img {
+  margin-right: 10px; /* Add some space between the image and the heading */
+}
+
+.logo a:hover {
+  text-decoration: underline; /* Underline on hover for visual feedback */
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+.right a{
+  text-decoration: none;
+  padding-right: 10px;
+  color: #333;
+}
+.right a:hover {
+  text-decoration: underline; /* Underline on hover for visual feedback */
 }
 
 h1 {
+  line-height: 0px;
   font-size: 40px;
   color: #1e272e;
 }
@@ -27,13 +72,14 @@ p {
   width: 50%;
   border: 1px solid #ccc;
   border-radius: 5px;
+  
 }
 .input:hover {
   border-color: #007bff;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
-.input:hover {
-  border-color: #5fa9f9;
+.input:focus {
+  border-color: #5f9ff9;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
@@ -91,6 +137,16 @@ button {
   body {
     background-color: #1c1f23;
   }
+  header {
+    background-color: #424242;
+  }
+  .right a {
+    color: #e9e5e5;
+    
+  }
+  .right img {
+    filter: invert(1); 
+  }
   h1 {
     color: #e9e5e5;
   }
@@ -100,5 +156,9 @@ button {
   .output {
     border: 1px solid #2b2b2b;
     color: rgb(225, 214, 214);
+  }
+  .input {
+    background: #2a2b33;
+    color: #b6b6b7;
   }
 }
