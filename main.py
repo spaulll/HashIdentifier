@@ -1,6 +1,6 @@
 import hashid
 from pyscript import document
-from pyscript import display
+
 
 def identify_hash(hash_value):
     try:
@@ -22,7 +22,7 @@ def identify_hash(hash_value):
     else:
         return None
 
-def findH(event):
+def findH(evt):
     input_hash = document.querySelector("#input")
     types = identify_hash(str(input_hash.value))
     
@@ -31,8 +31,13 @@ def findH(event):
     if types is None:
         op = "No hash types found! 😕."
     else:
-        op = "Possible hash types are:\n"
-        op += types
+        document.querySelector("#msg").innerText = "Possible hash types are:\n"
+        op = types
        
     
     output_div.innerText = op
+
+
+def onEnter(evt):
+        if evt.key == "Enter":
+            findH(evt)
