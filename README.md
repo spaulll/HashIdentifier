@@ -1,5 +1,5 @@
 
-![Logo](https://raw.githubusercontent.com/spaulll/HashLens/main/assets/icon.svg)
+![Logo](https://raw.githubusercontent.com/spaulll/HashLens/main/assets/logo.svg)
 
 
 # HashLens
