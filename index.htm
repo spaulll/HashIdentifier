@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="google-site-verification" content="4TtmiLrbchP_gqfZ80hdYYCFyPSowVEVW1ioqXKcHmg" />
-    <title>HashLens🔍</title>
-    <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" href="assets/favicon-16x16.png">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HashLens🔍</title>
+  <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="assets/favicon-16x16.png">
 
-    <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
-    <script async type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
-    <link rel="stylesheet" href="style.css">
-  </head>
+  <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
+  <script async type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
 
-  <body>
-    <div class="loader"></div>
-    
-    <header>
-      <div class="logo">
-        <a href="index.htm"><img src="assets/icon.svg" height="64" alt="Icon"></a>
-        <a href="index.htm">
-          <h1>HashLens</h1>
-        </a>
-      </div>
-      <div class="right">
-        <a href="https://github.com/spaulll/HashLens"><img src="assets/github.svg" height="20"></a>
-        <a href="https://github.com/spaulll/HashLens"><h4>GitHub</h4></a>
-      </div>
-    </header>
+<body>
+  <div class="loader"></div>
 
-    <div class="all">
-      <h1>Identify The Hash 🔍</h1>
-      <p>Identify the Type of hash with ease!</p>
-      <input type="text" name="text" class="input" id="input" placeholder="Enter any hash"  py-keypress="onEnter">
-      <div class="highlight"></div>
-      <div class="button">
-        <button py-click="findH"><span>Find Hash Type</span></button>
-      </div>
-      <div id="msg" class="msg"></div>
-      <div id="output" class="output"></div>
+  <header>
+    <div class="logo">
+      <a href="index.htm"><img src="assets/icon.svg" height="64" alt="Icon"></a>
+      <a href="index.htm">
+        <h1>HashLens</h1>
+      </a>
     </div>
-    <script type="py" src="./main.py" config="./pyscript.json"></script>
-    <script src="script.js"></script>
-  </body>
+    <div class="right">
+      <a href="https://github.com/spaulll/HashLens"><img src="assets/github.svg" height="20"></a>
+      <a href="https://github.com/spaulll/HashLens">
+        <h4>GitHub</h4>
+      </a>
+    </div>
+  </header>
+
+  <div class="all">
+    <h1>Identify The Hash 🔍</h1>
+    <p>Identify the Type of hash with ease!</p>
+    <input type="text" name="text" class="input" id="input" placeholder="Enter any hash" py-keypress="onEnter">
+    <div class="highlight"></div>
+    <div class="button">
+      <button py-click="findH"><span>Find Hash Type</span></button>
+    </div>
+    <div id="msg" class="msg"></div>
+    <div id="output" class="output"></div>
+  </div>
+  <script type="py" src="./scripts/main.py" config="./scripts/pyscript.json"></script>
+  <script src="./scripts/script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(function (registration) {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(function (error) {
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+</body>
 
 </html>
